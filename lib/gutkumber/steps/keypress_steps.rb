@@ -27,7 +27,7 @@ def make_event_key(key, type)
       keyval = Gdk::Keyval.from_name(letter.downcase)
     end
   else
-    keyval = letter[0]
+    keyval = letter[0].ord
   end
   new_event_key.keyval = keyval
   new_event_key.hardware_keycode = Gdk::Keymap.default.get_entries_for_keyval(keyval).first.first
